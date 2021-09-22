@@ -1,0 +1,139 @@
+<style>
+
+.watermark {
+  position: fixed;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: rgba(157,162,166,0.6);
+
+  top: 25%;
+  transform: translateX(100%) rotate(-45deg);
+}
+</style>
+<div class="row" ><span class="col-10" ></span><button type="button" class="col-1 btn btn-success float-right px-1" onclick="printDiv('printarea')">Print</button><%= link_to "Home", root_path, class: "col-1 btn btn-info" %></div>
+<div id ="printarea" >
+  <div >
+  <% if @format == "1" %>
+    <div class="watermark" >REPRINT</div>
+  <% end %>
+    <div class="d-flex justify-content-center align-items-center" >
+      <h1>Alnafis Tours and Travels</h1>
+    </div>
+      <div class="d-flex justify-content-center " >7E, 1st Floor, Opp Canara Bank,  </div>
+      <div class="d-flex justify-content-center " >Sundara Vinayagar  Kovil Street, Kallakurichi -606202</div>
+    
+    <div class="d-flex justify-content-center " ><b class="px-2">Contact: </b> 9943799766, 9943733766</div>
+    <br>
+    <div class="row" ><h3 class=" d-flex justify-content-center align-items-center" ><% if (@entry.s_type == "Flight Ticket") %>
+ Flight Ticket 
+<% elsif (@entry.s_type == "Train Ticket") %>
+Train Ticket 
+<% else %>
+<%=  @entry.service_name %> 
+<% end %>
+</h3>
+</div>
+<div class="row" >
+<span class="col-9 col-sm-9 col-md-9 col-xl-9" ></span>
+<span class="col-3 col-sm-3 col-md-3 col-xl-3" ><b>Date : </b><%= @entry.created_at.strftime('%d-%m-%Y') %></span>
+</div>
+
+  </div>
+<div style="padding: 30px;">
+  <table class="table table-bordered" >
+    <thead>
+    <tr>
+      <th scope="col" >Name</th>
+      <% if @entry.s_type == nil %>
+      <th scope="col" >Place</th>
+      <% else %>
+      <th scope="col" >From</th>
+      <% end %>
+      
+      <% if @entry.s_type != nil %>
+      <th scope="col" >To</th>
+      <% else %>
+      <th scope="col" >Country</th>
+      <% end %>
+      <th scope="col" >Service Name</th>
+      <% if(@entry.id_number != nil) %>
+        <th scope="col" >Identification Number</th>
+      <% end %>
+      <th scope="col" >Amount</th>
+      <% if @entry.paid != nil %>
+      <th scope="col" >Paid</th>
+      <th scope="col" >Balance</th>
+      <% end %>
+    </tr>
+    </thead>
+    <tbody>
+      <% @entry.name.each do |entry| %>
+      <tr>
+      <td scope="row" ><%= entry %></td>
+      <td><%= @entry.from %></td>
+      <td><%= @entry.to %></td>
+      <td><%= @entry.service_name %></td>
+      <% if (@entry.id_number != nil) %>
+      <td><%= @entry.id_number %></td>
+      <% end %>
+      <td>₹<%= "%.2f"%(("%.2f"%(@entry.price)).to_f/@entry.name.length) %></td>
+      <% if @entry.paid != nil %>
+      <td>₹<%= ("%.2f"%(@entry.paid)) %></td>
+      <td>₹<%= ("%.2f"%(@entry.price - @entry.paid)) %></td>
+      <% end %>
+      </tr>
+      <% end %>
+      <tr class="table-success" >
+      <td scope="row"  ></td>
+      <td></td>
+      <td></td>
+      <% if(@entry.id_number != nil || @entry.paid != nil) %>
+        <td></td>
+      <% end %>
+      <% if (@entry.paid == nil) %>
+      <td>Total Amount</td>
+      <td>₹<%= "%.2f"%@entry.price %></td>
+      <% else %>
+      <td></td>
+      <td>Total Balance</td>
+      <td>₹<%= ("%.2f"%(@entry.price - @entry.paid)) %></td>
+      <% end %>
+
+      </tr>
+    </tbody>
+    
+</div>
+
+    
+
+
+
+
+
+
+<script>
+function printDiv(divName) {
+     var printContents = document.getElementById(divName).innerHTML;
+     var originalContents = document.body.innerHTML;
+      
+     document.body.innerHTML = printContents + `<style>
+
+.watermark {
+  position: fixed;
+  font-size: 80px;
+  font-weight: 700;
+  letter-spacing: 5px;
+  color: rgba(157,162,166,0.4);
+
+  top: 24%;
+  transform: translateX(50%) rotate(-45deg);
+}
+</style>`;
+   
+     window.print();
+
+     document.body.innerHTML = originalContents;
+}
+</script>
+
