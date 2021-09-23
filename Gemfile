@@ -6,6 +6,7 @@ ruby '2.5.1'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.1.1'
 # Use sqlite3 as the database for Active Record
+gem 'sqlite3', '~> 1.4'
 # Use Puma as the app server
 gem 'puma', '~> 5.0'
 # Use SCSS for stylesheets
@@ -59,4 +60,6 @@ gem "rails_admin", "~> 2.2"
 
 gem "bootstrap", "~> 5.1.0"
 
-gem "pg", "~> 1.2"
+gem "mongoid", "~> 7.3"
+
+gem "kaminari-mongoid", "~> 1.0"

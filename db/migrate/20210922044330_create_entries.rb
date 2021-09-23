@@ -1,15 +1,15 @@
 class CreateEntries < ActiveRecord::Migration[6.1]
   def change
     create_table :entries do |t|
-      t.string :name, array: true
-      t.integer :price
-      t.string :from
-      t.string :to
-      t.string :s_type
-      t.string :service_name
-      t.string :id_number, optional: true
-      t.string :phone, optional: true
-      t.integer :paid, optional: true
+      field :name, type:Array, default:[] 
+      field :price, type:Integer
+      field :from, type:String
+      field :to, type:String
+      field :s_type, type:String
+      field :service_name, type:String
+      field :id_number, type:String
+      field :phone, type:String
+      field :paid, type:Integer
       t.timestamps
     end
   end
