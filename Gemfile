@@ -63,3 +63,11 @@ gem "bootstrap", "~> 5.1.0"
 gem "mongoid", "~> 7.3"
 
 gem "kaminari-mongoid", "~> 1.0"
+
+gem "sprockets-rails", "~> 3.2"
+
+gem "popper_js", "~> 2.9"
+
+gem "sass", "~> 3.7"
+
+gem "autoprefixer-rails", "~> 10.3"
