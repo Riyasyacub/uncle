@@ -18,8 +18,8 @@
     <div class="watermark" >REPRINT</div>
   <% end %>
   <div class="row" >
-  <div class="col-3" ><img src="https://i.ibb.co/BsCXfKG/FLIGHT.jpg" class="img-fluid" alt="FLIGHT" border="0"></div>
-    <div class="col-7" >
+    <div class="col-2" ></div>
+    <div class="col-7 content" >
     <div class="d-flex justify-content-around align-items-center" >
       <h1>Alnafis Tours and Travels</h1>
     </div>
@@ -37,15 +37,17 @@ Train Ticket
 <%=  @entry.service_name %> 
 <% end %>
 </h3>
-
+</div>
+    <div class="col-3 overlap image" ><img src="https://i.ibb.co/72c5tgh/Right-Side-copy-1.png" class="img-fluid " alt="Right-Side-copy-1" border="0"></div>
+    </div>
     <div class="row" >
 <span class="col-9 col-sm-9 col-md-9 col-xl-9" ></span>
 <span class="pl-2 col-3 col-sm-3 col-md-3 col-xl-3" ><b>Date : </b><%= @entry.created_at.strftime('%d-%m-%Y') %></span>
 </div>
-</div>
 
 
-    </div>
+
+    
 
   </div>
   <div>
@@ -133,6 +135,9 @@ function printDiv(divName) {
 body {
   font-family: system-ui;
 }
+.image {
+    margin-left: -100px;
+    }
 .watermark {
   position: fixed;
   font-size: 80px;
