@@ -1,8 +1,33 @@
+<style>
+.image {
+    margin-left: -100px;
+    }
+.p-10 {
+  padding-left: 150px;
+  font-size: 22px;
+}
+</style>
 <div data-turbolinks= false >
-<div class="d-flex justify-content-center align-items-center pt-4" >
-      <h1>Bill Printing</h1>
+<br><br>
+  <div class="row" >
+    <div class="col-2" ></div>
+    <div class="col-7 content" >
+    <div class="d-flex justify-content-around align-items-center" >
+      <h1>Alnafis Tours and Travels</h1>
     </div>
+    
+      <div class="d-flex justify-content-around " >7E, 1st Floor, Opp Canara Bank,</div>
+      <div class="d-flex justify-content-around " >  Sundara Vinayagar  Kovil Street, Kallakurichi -606202</div>
+    
+    <div class="d-flex justify-content-around " ><span><b>Contact: </b> 9943799766, 9943733766<span> </div>
     <br>
+    <h2 class=" d-flex justify-content-around align-items-center" >Bill Printing
+</h2>
+</div>
+    <div class="col-3 overlap image" ><img src="https://i.ibb.co/72c5tgh/Right-Side-copy-1.png" class="img-fluid " alt="Right-Side-copy-1" border="0">
+    </div>
+    </div>
+<div class="p-10" >
 <ul>
 <li><%= link_to "Flight Ticket", flight_path %></li>
 <li><%= link_to "Train Ticket", train_path %></li>
@@ -16,6 +41,7 @@
 </ul>
 
 </ul>
+</div>
 </div>
 <script>
   $(document).on('click','#reprint', function(){
