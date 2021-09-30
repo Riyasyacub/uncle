@@ -26,8 +26,9 @@
   <br>
   <%= f.text_field :s_type, {value: @val, hidden: true} %>
   <div class="row" ><div class="col-3" >
-  <%= f.label :service_name %></div><div class="col-6" >
-  <%= f.select :service_name, @s,{}, {class: "form-control"} %></div></div>
+  <%= f.label :service_name %></div><div class="col-3" >
+  <%= f.select :service_name, @s,{}, {class: "form-control"} %></div>
+  <div class="col-3" ><%= f.text_field :days, class: "form-control" %></div></div>
   <br>
   <% if (@val != "Flight Ticket") %>
   <div class="row" ><div class="col-3" >

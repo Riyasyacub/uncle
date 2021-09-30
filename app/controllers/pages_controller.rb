@@ -9,7 +9,7 @@ class PagesController < ApplicationController
   def other
     @entry = Entry.new
     @s = ["Stamping","Cerificate Attestation","Stamping & Attestation","Emigration","Tour Visa","Hotel Booking"]
-    @places = ["Saudi","Qatar","Kuwait","Oman","Bahrain","UAE","Singapore","Malaysia"]
+    @places = ["Saudi","Qatar","Kuwait","Oman","Bahrain","UAE","Singapore","Malaysia","Sri Lanka",'Canada','Nepal','Maldives','Bangladesh','Armenia','China']
   end
 
   def print
@@ -49,7 +49,12 @@ class PagesController < ApplicationController
   end
 
   def entry_update
-    en = Entry.new(entry_params)
+    en = Entry.new(from: entry_params[:from], to: entry_params[:to], price: entry_params[:price],s_type: entry_params[:s_type],id_number: entry_params[:id_number], phone: entry_params[:phone], paid: entry_params[:paid], name: entry_params[:name] )
+    if entry_params[:days]
+      en.service_name = entry_params[:service_name] +" " + entry_params[:days]
+    else
+      en.service_name = entry_params[:service_name]
+    end
     if en.save
       redirect_to print_path(en, en.id.to_s+en.phone)
     else
@@ -78,7 +83,7 @@ class PagesController < ApplicationController
   private
 
     def entry_params
-      params.require(:entry).permit(:members,:from,:to,:price,:s_type,:service_name,:id_number,:phone,:paid,:name => [])
+      params.require(:entry).permit(:members,:from,:to,:price,:s_type,:service_name,:id_number,:phone,:paid,:days,:name => [])
     end
     def money_params
       params.require(:money).permit(:from,:country,:phone,:name,:acc_no,:ifsc,:company,:aadhar_no,:pan_no,:amount,:address,:id_no,:phone)

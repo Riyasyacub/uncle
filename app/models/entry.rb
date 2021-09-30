@@ -11,5 +11,5 @@ class Entry
       field :id_number, type:String
       field :phone, type:String
       field :paid, type:Integer
-  
+  attr_accessor :days
 end

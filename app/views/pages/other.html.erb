@@ -25,8 +25,10 @@
   <div class="row" >
   <div class="col-3">
   <%= f.label :service_name %>
-  </div><div class="col-6" >
+  </div><div class="col-3" >
   <%= f.select :service_name, @s, {}, {class: "form-control"} %>
+  </div><div class="col-3" >
+  <%= f.text_field :days, class: "form-control" %>
   </div>
   </div>
   <br>
