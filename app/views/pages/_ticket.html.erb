@@ -26,9 +26,9 @@
   <br>
   <%= f.text_field :s_type, {value: @val, hidden: true} %>
   <div class="row" ><div class="col-3" >
-  <%= f.label :service_name %></div><div class="col-3" >
+  <%= f.label :service_name %></div><div class="col-6" >
   <%= f.select :service_name, @s,{}, {class: "form-control"} %></div>
-  <div class="col-3" ><%= f.text_field :days, class: "form-control" %></div></div>
+  </div>
   <br>
   <% if (@val != "Flight Ticket") %>
   <div class="row" ><div class="col-3" >
@@ -36,6 +36,11 @@
   <%= f.text_field :id_number, class: "form-control" %></div></div>
   <br>
   <% end %>
+  <div class="row" ><div class="col-3" >
+  <%= f.label :date %></div><div class="col-6" >
+  <%= f.datetime_field :date, class: "form-control" %></div>
+  </div>
+  <br>
   <div class="row" ><div class="col-3" >
   <%= f.label :phone_number %></div><div class="col-6" >
   <%= f.text_field :phone, class: "form-control" %></div></div>

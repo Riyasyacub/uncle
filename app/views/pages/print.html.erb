@@ -27,7 +27,7 @@
       <div class="d-flex justify-content-around " >7E, 1st Floor, Opp Canara Bank,</div>
       <div class="d-flex justify-content-around " >  Sundara Vinayagar  Kovil Street, Kallakurichi -606202</div>
     
-    <div class="d-flex justify-content-around " ><span><b>Contact: </b> 9943799766, 9943733766<span> </div>
+    <div class="d-flex justify-content-around " ><span><b>Contact: 9943799766, 9943733766 </b><span> </div>
     <br>
     <h3 class=" d-flex justify-content-around align-items-center" ><% if (@entry.s_type == "Flight Ticket") %>
  Flight Ticket 
@@ -44,11 +44,6 @@ Invoice
 <span class="col-9 col-sm-9 col-md-9 col-xl-9" ></span>
 <span class="pl-2 col-3 col-sm-3 col-md-3 col-xl-3" ><b>Date : </b><%= @entry.created_at.strftime('%d-%m-%Y') %></span>
 </div>
-
-
-
-    
-
   </div>
   <div>
 
@@ -68,15 +63,19 @@ Invoice
       <% else %>
       <th scope="col" >Country</th>
       <% end %>
-      <th scope="col" >Service Name</th>
+      <% if (@entry.s_type == "Flight Ticket") %>
+        <th scope="col" >Airlines</th>
+      <% else %>
+        <th scope="col" >Service Name</th>
+      <% end %>
       <% if(@entry.id_number != nil) %>
         <th scope="col" >Identification Number</th>
       <% end %>
-      <th scope="col" >Amount</th>
-      <% if @entry.paid != nil %>
-      <th scope="col" >Paid</th>
-      <th scope="col" >Balance</th>
+      <% if @entry.date %>
+      <th scope="col" >Date </th>
       <% end %>
+      <th scope="col" >Amount</th>
+      
     </tr>
     </thead>
     <tbody>
@@ -86,33 +85,61 @@ Invoice
       <td><%= @entry.from %></td>
       <td><%= @entry.to %></td>
       <td><%= @entry.service_name %></td>
+      <% if @entry.date %>
+      <td><%= @entry.date.strftime("%d-%m-%Y %H:%M %p") %></td>
+      <% end %>
       <% if (@entry.id_number != nil) %>
       <td><%= @entry.id_number %></td>
       <% end %>
       <td>₹<%= "%.2f"%(("%.2f"%(@entry.price)).to_f/@entry.name.length) %></td>
-      <% if @entry.paid != nil %>
-      <td>₹<%= ("%.2f"%(@entry.paid)) %></td>
-      <td>₹<%= ("%.2f"%(@entry.price - @entry.paid)) %></td>
-      <% end %>
+      
       </tr>
       <% end %>
       <tr class="table-success" >
       <td scope="row"  ></td>
       <td></td>
       <td></td>
-      <% if(@entry.id_number != nil || @entry.paid != nil) %>
+      
+      <% if(@entry.id_number != nil ) %>
         <td></td>
       <% end %>
-      <% if (@entry.paid == nil) %>
+      <% if(@entry.date != nil) %>
+        <td></td>
+      <% end %>
       <td>Total Amount</td>
       <td>₹<%= "%.2f"%@entry.price %></td>
-      <% else %>
-      <td></td>
-      <td>Total Balance</td>
-      <td>₹<%= ("%.2f"%(@entry.price - @entry.paid)) %></td>
-      <% end %>
-
       </tr>
+      <% if(@entry.paid != nil) %>
+      <tr class="table-success" >
+      <td scope="row"  ></td>
+      <td></td>
+      <td></td>
+      <% if(@entry.id_number != nil ) %>
+        <td></td>
+      <% end %>
+      <% if(@entry.date != nil) %>
+        <td></td>
+      <% end %>
+      <td>Paid</td>
+      <td>₹<%= "%.2f"%@entry.paid %></td>
+      
+      </tr>
+      <% if(@entry.price - @entry.paid != 0) %>
+      <tr class="table-success" >
+      <td scope="row"  ></td>
+      <td></td>
+      <td></td>
+      <% if(@entry.id_number != nil ) %>
+        <td></td>
+      <% end %>
+      <% if(@entry.date != nil) %>
+        <td></td>
+      <% end %>
+      <td>Balance</td>
+      <td>₹<%= "%.2f"%(@entry.price - @entry.paid) %></td>
+      </tr>
+      <% end %>
+      <% end %>
     </tbody>
     
 </div>
@@ -129,15 +156,16 @@ function printDiv(divName) {
      var printContents = document.getElementById(divName).innerHTML;
      var originalContents = document.body.innerHTML;
       
-     var data = `<head>
+     var data = `<head><title>`+ <%= @entry.service_name + "_"+ @entry.name[0] +`</title>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-     </head>`+printContents + `<style>
+     </head><body>`+printContents + `</body><style>
 @import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&display=swap');
 
 h1 {
   font-family: 'Ubuntu', sans-serif;
   color: #0000ff;
 }
+
 .image {
     margin-left: -100px;
     }

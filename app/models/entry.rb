@@ -11,5 +11,6 @@ class Entry
       field :id_number, type:String
       field :phone, type:String
       field :paid, type:Integer
-  attr_accessor :days
+      field :date, type:DateTime
+  attr_accessor :days, :flight1, :flight2
 end

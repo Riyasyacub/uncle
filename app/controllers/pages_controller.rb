@@ -8,7 +8,7 @@ class PagesController < ApplicationController
 
   def other
     @entry = Entry.new
-    @s = ["Stamping","Cerificate Attestation","Stamping & Attestation","Emigration","Tour Visa","Hotel Booking"]
+    @s = ["Stamping","Cerificate Attestation","Stamping & Attestation","Emigration","Tour Visa","Hotel Booking","Others"]
     @places = ["Saudi","Qatar","Kuwait","Oman","Bahrain","UAE","Singapore","Malaysia","Sri Lanka",'Canada','Nepal','Maldives','Bangladesh','Armenia','China']
   end
 
@@ -50,7 +50,18 @@ class PagesController < ApplicationController
 
   def entry_update
     en = Entry.new(from: entry_params[:from], to: entry_params[:to], price: entry_params[:price],s_type: entry_params[:s_type],id_number: entry_params[:id_number], phone: entry_params[:phone], paid: entry_params[:paid], name: entry_params[:name] )
-    if entry_params[:days]
+    if entry_params[:date]
+      en.date = DateTime.parse(entry_params[:date])
+    end
+    if (entry_params[:flight1])
+      en.from = entry_params[:from] + " " + entry_params[:flight1]
+    end
+    if (entry_params[:flight2])
+      en.to = entry_params[:to] + " " + entry_params[:flight2]
+    end
+    if entry_params[:service_name] == "Others"
+      en.service_name = entry_params[:days]
+    elsif entry_params[:days]
       en.service_name = entry_params[:service_name] +" " + entry_params[:days]
     else
       en.service_name = entry_params[:service_name]
@@ -83,7 +94,7 @@ class PagesController < ApplicationController
   private
 
     def entry_params
-      params.require(:entry).permit(:members,:from,:to,:price,:s_type,:service_name,:id_number,:phone,:paid,:days,:name => [])
+      params.require(:entry).permit(:members,:from,:to,:price,:s_type,:service_name,:id_number,:phone,:paid,:days,:flight1, :flight2 ,:date,:time,:name => [])
     end
     def money_params
       params.require(:money).permit(:from,:country,:phone,:name,:acc_no,:ifsc,:company,:aadhar_no,:pan_no,:amount,:address,:id_no,:phone)
