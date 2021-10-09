@@ -51,7 +51,7 @@ class PagesController < ApplicationController
   def entry_update
     en = Entry.new(from: entry_params[:from], to: entry_params[:to], price: entry_params[:price],s_type: entry_params[:s_type],id_number: entry_params[:id_number], phone: entry_params[:phone], paid: entry_params[:paid], name: entry_params[:name] )
     if entry_params[:date]
-      en.date = DateTime.parse(entry_params[:date])
+      en.date = DateTime.parse(entry_params[:date]) - 5.hours - 30.minutes
     end
     if (entry_params[:flight1])
       en.from = entry_params[:from] + " " + entry_params[:flight1]
