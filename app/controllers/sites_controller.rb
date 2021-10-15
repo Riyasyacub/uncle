@@ -10,4 +10,8 @@ class SitesController < ApplicationController
 
   def news
   end
+
+  def staff_login
+    
+  end
 end

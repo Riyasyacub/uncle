@@ -15,7 +15,7 @@
   transform: translateX(100%) rotate(-45deg);
 }
 </style>
-<div class="row" ><span class="col-10" ></span><button type="button" class="col-1 btn btn-success float-right" onclick="printDiv('printarea','<%= (@entry.service_name + "_"+ @entry.name[0]).to_s %>')">Print</button><%= link_to "Home", root_path, class: "col-1 btn btn-info" %></div></div>
+<div class="row" ><span class="col-10" ></span><button type="button" class="col-1 btn btn-success float-right" onclick="printDiv('printarea','<%= (@entry.service_name + "_"+ @entry.name[0]).to_s %>')">Print</button><%= link_to "Home", index_path, class: "col-1 btn btn-info" %></div></div>
 <div id ="printarea" >
   <div >
   <% if @format == "1" %>

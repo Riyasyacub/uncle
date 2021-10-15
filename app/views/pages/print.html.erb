@@ -11,7 +11,7 @@
   transform: translateX(100%) rotate(-45deg);
 }
 </style>
-<div class="row" ><span class="col-10" ></span><button type="button" class="col-1 btn btn-success float-right px-1" onclick="printDiv('printarea','<%= (@entry.service_name + "_"+ @entry.name[0]).to_s %>')">Print</button><%= link_to "Home", root_path, class: "col-1 btn btn-info" %></div>
+<div class="row" ><span class="col-10" ></span><button type="button" class="col-1 btn btn-success float-right px-1" onclick="printDiv('printarea','<%= (@entry.service_name + "_"+ @entry.name[0]).to_s %>')">Print</button><%= link_to "Home", index_path, class: "col-1 btn btn-info" %></div>
 <div id ="printarea" >
   <div >
   <% if @format == "1" %>
@@ -184,7 +184,7 @@ h1 {
     if (is_chrome) {
         mywindow.onload = function() { // wait until all resources loaded 
             mywindow.focus(); // necessary for IE >= 10
-            mywindow.print();  // change window to mywindow
+            mywindow.print();
             //mywindow.close();// change window to mywindow
         };
     }
