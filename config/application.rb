@@ -41,9 +41,7 @@ module Rails2
     # config.eager_load_paths << Rails.root.join("extras")
 
     # Allow framing to see output in Repl.it
-    config.action_dispatch.default_headers = {
-      'X-Frame-Options' => ''
-    }
+    
     # config.time_zone = "Chennai"
   end
 end

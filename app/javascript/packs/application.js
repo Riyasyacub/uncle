@@ -13,11 +13,24 @@ import Turbolinks from "turbolinks"
 
 import "channels"
 
+require('jquery')
 Rails.start()
 Turbolinks.start()
 
-var login = false;
-$(".iframe-btn").on('click',function(){
+
+$(document).ready( function(){
+  if (localStorage.getItem('login') == true){
+  console.log($(".before-login").html())
+  $(".before-login").hide();
+  $(".after-login").show();
+}
+else {
+  $(".after-login").hide();
+  $(".before-login").show();
+}
+})
+
+$(document).on('click',".iframe-btn",function(){
   if($(this).text() == 'Ria'){
     $('.iframe').attr('src','https://b2b.riya.travel/')
   }
@@ -29,9 +42,10 @@ $(".iframe-btn").on('click',function(){
   }
 })
 
-$(".submit").on('click',function(){
-  if($("#userid").val() == 'admin@alnafis.com' && $("#pass").val() == 'Nafis2014@' && login == false){
-    login = true;
+$(document).on('click',".submit",function(){
+  
+  if($("#userid").val() == 'admin@alnafis.com' && $("#pass").val() == 'Nafis2014@'){
+    localStorage.setItem('login',true);
     $(".before-login").hide();
     $(".after-login").show();
   }

@@ -201,6 +201,7 @@ jQuery(document).ready( function($) {
 
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a href="<%= sites_news_path %>">News</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-94 current_page_item menu-item-103"><a href="<%= sites_contact_path %>" aria-current="page">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="<%= sites_staff_login_path %>">Staff Login</a></li>
 </ul></div>	</nav><!-- #site-navigation -->
 		<nav class="social-navigation" role="navigation" aria-label="Social Links Menu">
 		<div class="menu-social-container"><ul id="menu-social" class="social-links-menu"><li id="menu-item-35" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-35"><a href="http://facebook.com"><span class="screen-reader-text">Facebook</span><svg class="svg-icon" width="26" height="26" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M20.007,3H3.993C3.445,3,3,3.445,3,3.993v16.013C3,20.555,3.445,21,3.993,21h8.621v-6.971h-2.346v-2.717h2.346V9.31 c0-2.325,1.42-3.591,3.494-3.591c0.993,0,1.847,0.074,2.096,0.107v2.43l-1.438,0.001c-1.128,0-1.346,0.536-1.346,1.323v1.734h2.69 l-0.35,2.717h-2.34V21h4.587C20.555,21,21,20.555,21,20.007V3.993C21,3.445,20.555,3,20.007,3z"></path></svg></a></li>
@@ -261,15 +262,36 @@ jQuery(document).ready( function($) {
 <div class="wp-block-column">
 <h2 class="has-text-align-left">Send Us a Message</h2>
 
+<% flash.each do |type, msg| %>
+  <div class="alert alert-success" >
+    <%= msg %>
+  </div>
+<% end %>
 
 <div id="contact-form-94">
+<%= form_for @message, url: message_create_path, html: {class: "contact-form commentsblock" } do |form| %>
+  <div class="grunion-field-wrap grunion-field-name-wrap">
+<label for="g94-name" class="grunion-field-label name">Name<span>(required)</span></label>
+<%# <input type="text" name="g94-name" id="g94-name" value="" class="name" required="" aria-required="true"> #%>
+  <%= form.text_field :name, "aria-required":"true" %>
+	</div>
+
+  <div class="grunion-field-wrap grunion-field-telephone-wrap">
+<label for="g94-phone" class="grunion-field-label telephone">Phone</label>
+<%# <input type="tel" name="g94-phone" id="g94-phone" value="" class="telephone"> #%>
+
+<%= form.number_field :number, "aria-required":"true"  %>
+	</div>
+  <div class="grunion-field-wrap grunion-field-textarea-wrap">
+<label for="contact-form-comment-g94-message" class="grunion-field-label textarea">Message<span>(required)</span></label>
+<%= form.text_area :message, rows: "20", "aria-required":"true" %>
+	</div>
+
+  <%= form.submit "Submit" , class:"pushbutton-wide" %>
+<% end %>
 <form action="https://exforddemo.wordpress.com/contact/#contact-form-94" method="post" class="contact-form commentsblock">
 
 
-<div class="grunion-field-wrap grunion-field-name-wrap">
-<label for="g94-name" class="grunion-field-label name">Name<span>(required)</span></label>
-<input type="text" name="g94-name" id="g94-name" value="" class="name" required="" aria-required="true">
-	</div>
 
 
 
@@ -277,24 +299,19 @@ jQuery(document).ready( function($) {
 
 
 
-<div class="grunion-field-wrap grunion-field-telephone-wrap">
-<label for="g94-phone" class="grunion-field-label telephone">Phone</label>
-<input type="tel" name="g94-phone" id="g94-phone" value="" class="telephone">
-	</div>
 
 
 
-<div class="grunion-field-wrap grunion-field-textarea-wrap">
-<label for="contact-form-comment-g94-message" class="grunion-field-label textarea">Message<span>(required)</span></label>
-<textarea name="g94-message" id="contact-form-comment-g94-message" rows="20" class="textarea" required="" aria-required="true"></textarea>
-	</div>
 
-	<p class="contact-submit">
+
+
+
+	<%#<p class="contact-submit">
 		<button type="submit" class="pushbutton-wide">Submit</button>		<input type="hidden" id="_wpnonce" name="_wpnonce" value="42e6a4d78f"><input type="hidden" name="_wp_http_referer" value="/contact/">
 		<input type="hidden" name="contact-form-id" value="94">
 		<input type="hidden" name="action" value="grunion-contact-form">
 		<input type="hidden" name="contact-form-hash" value="76f38ac84e318df4667f095634ef3ea9b76e60a7">
-	</p>
+	</p> #%>
 <p style="display: none !important;"><label>Δ<textarea name="ak_hp_textarea" cols="45" rows="8" maxlength="100"></textarea></label><input type="hidden" id="ak_js" name="ak_js" value="1633838870578"><script>document.getElementById( "ak_js" ).setAttribute( "value", ( new Date() ).getTime() );</script></p></form>
 </div></div>
 </div>
@@ -326,6 +343,7 @@ jQuery(document).ready( function($) {
 
 <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a href="<%= sites_news_path %>">News</a></li>
 <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-94 current_page_item menu-item-103"><a href="<%= sites_contact_path %>" aria-current="page">Contact</a></li>
+<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="<%= sites_staff_login_path %>">Staff Login</a></li>
 </ul></div>	</nav><!-- .footer-navigation -->
 
 	

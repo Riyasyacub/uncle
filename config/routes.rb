@@ -20,5 +20,7 @@ Rails.application.routes.draw do
   get '/reprint_money', to: 'pages#reprint_money', as: 'reprint_money'
   get '/others', to: 'pages#other', as: "other"
   get '/reprint_other', to: 'pages#reprint_other' , as: 'reprint_other'
+
+  post '/message', to: 'sites#message_create', as: 'message_create'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

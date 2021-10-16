@@ -151,15 +151,7 @@ jQuery(document).ready( function($) {
 			if ( 'wp-admin-bar-jumptotop-button-menu' != self.attr( 'id' ) )
 				total_width += self.width();
 		});
-		if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 ) {
-			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
-		} else if (  jQuery( window ).scrollTop() >= 350 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) < 0 ) {
-			if ( jQuery( '#wp-admin-bar-jumptotop-button-menu' ).position()['left'] - total_width < 10 )
-			   return;
-			jQuery( '#jumptotop' ).animate( { 'top': 0 }, 'fast' );
-		} else if (  jQuery( window ).scrollTop() < 1 && parseInt( jQuery( '#jumptotop' ).css( 'top' ) ) >= 0 ) {
-			jQuery( '#jumptotop' ).animate( { 'top': '-50px' }, 'fast' );
-		}
+		
 	}
 	// handle on page load if auto scrolling to a position
 	hideShowTbJumpToTop();
@@ -225,10 +217,16 @@ jQuery(document).ready( function($) {
   </div>
   <div> <button class="btn btn-success submit" > Submit </button> </div>
 </div>
-
+<style>
+a.link-dark:hover {
+  color: white;
+}
+</style>
 <div class="after-login" style="display: none;" >
 <button class="btn btn-info iframe-btn" >Ria</button>
 <button class="btn btn-info iframe-btn" >Akbar</button>
+<button class="btn btn-info " ><a href="https://www.goindigo.in/partner-login.html?linkNav=partner-login_header" target="_blank" class="link-dark" >Indigo</a></button>
+<button class="btn btn-info " ><a href="https://ndc.omanair.com/login" target="_blank" class="link-dark" >Oman</a></button>
 <button class="btn btn-info iframe-btn" >Billing</button>
 <div style="width: 100%;overflow: hidden;-ms-overflow-style: none;scrollbar-width: none;" class="iframe-div" >
 
