@@ -1,3 +1,4 @@
+require 'rest-client'
 class SitesController < ApplicationController
   def home
   end
@@ -9,11 +10,20 @@ class SitesController < ApplicationController
   def message_create
     @message = Message.new(message_params)
     if @message.save
-      AdminMailer.new_feedback(message_params[:name],message_params[:number],message_params[:message]).deliver
+      # AdminMailer.new_feedback(message_params[:name],message_params[:number],message_params[:message]).deliver
+      send_simple_message
       redirect_to sites_contact_path, flash: {success: "Submitted Successfully"}
     end
 
   end
+  def send_simple_message
+	RestClient.post "https://api:46d0e843c413788b5e5c39f2029eccfb-2ac825a1-0dfbde71"\
+	"@api.mailgun.net/v3/sandbox4a1f74dcd1ec4daba1fe771713e902e1/messages",
+	:from => "Excited User <mailgun@sandbox4a1f74dcd1ec4daba1fe771713e902e1.mailgun.org>",
+	:to => "bar@example.com, riyasyacub@gmail.com",
+	:subject => "Hello",
+	:text => "Testing some Mailgun awesomness!"
+end
   def services
   end
 

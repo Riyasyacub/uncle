@@ -7,7 +7,7 @@ class AdminMailer < ApplicationMailer
     @name = name
     @number = number
     @message = message
-    mail(to: 'riyasyacub@gmail.com', subject: 'New Message')
+    mail(to: 'test-2vg1oxhu2@srv1.mail-tester.com', subject: 'New Message')
   end
 
 end

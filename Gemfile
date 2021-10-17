@@ -71,3 +71,7 @@ gem "popper_js", "~> 2.9"
 gem "sass", "~> 3.7"
 
 gem "autoprefixer-rails", "~> 10.3"
+
+gem "mime-types", "~> 3.3"
+
+gem "rest-client", "~> 2.1"
