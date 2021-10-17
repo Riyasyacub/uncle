@@ -118,5 +118,12 @@ Rails.application.configure do
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
   config.action_mailer.delivery_method = :smtp
-  config.action_mailer.default_url_options = { host: "alnafistravels.in", protocol: 'http' }
+  config.action_mailer.smtp_settings = {
+  :authentication => :plain,
+  :address => "smtp.mailgun.org",
+  :port => 587,
+  :domain => "sandboxaf118472ca1d411891c4dc9af7816947.mailgun.org",
+  :user_name => "postmaster@sandboxaf118472ca1d411891c4dc9af7816947.mailgun.org",
+  :password => "2315849dbcaad464e922a7274f53463c-2ac825a1-dc352d19"
+  }
 end

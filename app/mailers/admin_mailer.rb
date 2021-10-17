@@ -1,7 +1,7 @@
 class AdminMailer < ApplicationMailer
 
-  default from: 'from@example.com'
-  layout 'mailer'
+  default from: 'me@2315849dbcaad464e922a7274f53463c-2ac825a1-dc352d19.com'
+  
 
   def new_feedback(name,number,message)
     @name = name

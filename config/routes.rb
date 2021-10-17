@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :incoming_mails, only: [:create]
   root to: 'sites#home'
   get 'home', to: 'sites#home', as: 'sites_home'
   get 'contact', to: 'sites#contact', as: 'sites_contact'
