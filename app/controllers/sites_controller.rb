@@ -20,7 +20,7 @@ class SitesController < ApplicationController
 	RestClient.post "https://api:46d0e843c413788b5e5c39f2029eccfb-2ac825a1-0dfbde71"\
 	"@api.mailgun.net/v3/sandbox4a1f74dcd1ec4daba1fe771713e902e1/messages",
 	:from => "Excited User <mailgun@sandbox4a1f74dcd1ec4daba1fe771713e902e1.mailgun.org>",
-	:to => "bar@example.com, riyasyacub@gmail.com",
+	:to => "riyasyacub@gmail.com",
 	:subject => "Hello",
 	:text => "Testing some Mailgun awesomness!"
 end
