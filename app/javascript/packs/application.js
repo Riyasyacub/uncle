@@ -20,7 +20,7 @@ Turbolinks.start()
 
 $(document).ready( function(){
   if (localStorage.getItem('login') == true){
-  console.log($(".before-login").html())
+  // console.log($(".before-login").html())
   $(".before-login").hide();
   $(".after-login").show();
 }
@@ -39,6 +39,9 @@ $(document).on('click',".iframe-btn",function(){
   }
   if($(this).text() == 'Billing'){
     $('.iframe').attr('src','/index')
+  }
+  if($(this).text() == 'Messages'){
+    $('.iframe').attr('src','/messages')
   }
 })
 

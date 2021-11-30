@@ -6,6 +6,10 @@ class PagesController < ApplicationController
   def details
   end
 
+  def messages
+    @messages = Message.all
+  end
+
   def other
     @entry = Entry.new
     @s = ["Stamping","Cerificate Attestation","Stamping & Attestation","Emigration","Tour Visa","Hotel Booking","Others"]

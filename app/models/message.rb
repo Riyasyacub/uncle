@@ -6,4 +6,5 @@ class Message
   field :message, type: String
   field :number, type: Integer
   
+  validates :number, presence: true, length: { minimum: 8, maximum: 16 }
 end

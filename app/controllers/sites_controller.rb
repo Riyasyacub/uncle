@@ -11,8 +11,10 @@ class SitesController < ApplicationController
     @message = Message.new(message_params)
     if @message.save
       # AdminMailer.new_feedback(message_params[:name],message_params[:number],message_params[:message]).deliver
-      send_simple_message
+      # send_simple_message
       redirect_to sites_contact_path, flash: {success: "Submitted Successfully"}
+    else 
+      redirect_to sites_contact_path, flash: {danger: "All fields are required & should be a vaild one"}
     end
 
   end

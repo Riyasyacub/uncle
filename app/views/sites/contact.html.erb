@@ -261,7 +261,7 @@ jQuery(document).ready( function($) {
 <h2 class="has-text-align-left">Send Us a Message</h2>
 
 <% flash.each do |type, msg| %>
-  <div class="alert alert-success" >
+  <div class="alert alert-<%= type %>" >
     <%= msg %>
   </div>
 <% end %>
@@ -269,7 +269,7 @@ jQuery(document).ready( function($) {
 <div id="contact-form-94">
 <%= form_for @message, url: message_create_path, html: {class: "contact-form commentsblock" } do |form| %>
   <div class="grunion-field-wrap grunion-field-name-wrap">
-<label for="g94-name" class="grunion-field-label name">Name<span>(required)</span></label>
+<label for="g94-name" class="grunion-field-label name">Name</label>
 <%# <input type="text" name="g94-name" id="g94-name" value="" class="name" required="" aria-required="true"> #%>
   <%= form.text_field :name, "aria-required":"true" %>
 	</div>
@@ -281,7 +281,7 @@ jQuery(document).ready( function($) {
 <%= form.number_field :number, "aria-required":"true"  %>
 	</div>
   <div class="grunion-field-wrap grunion-field-textarea-wrap">
-<label for="contact-form-comment-g94-message" class="grunion-field-label textarea">Message<span>(required)</span></label>
+<label for="contact-form-comment-g94-message" class="grunion-field-label textarea">Message</label>
 <%= form.text_area :message, rows: "20", "aria-required":"true" %>
 	</div>
 
