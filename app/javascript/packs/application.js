@@ -44,7 +44,7 @@ $(document).on('click',".iframe-btn",function(){
 
 $(document).on('click',".submit",function(){
   
-  if($("#userid").val() == 'admin@alnafis.com' && $("#pass").val() == 'Nafis2014@'){
+  if($("#userid").val() == 'admin' && $("#pass").val() == 'Nafis2014@'){
     localStorage.setItem('login',true);
     $(".before-login").hide();
     $(".after-login").show();
