@@ -14,5 +14,5 @@ class Money
   field :address, type:String
   field :id_no, type:String
   field :phone, type:String
-
+  field :bill_no, type:String
 end

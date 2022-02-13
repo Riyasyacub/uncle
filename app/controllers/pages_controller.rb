@@ -45,6 +45,7 @@ class PagesController < ApplicationController
 
   def money_update
     en = Money.new(money_params)
+    en.bill_no = (Money.all.count() + 1).to_s.rjust(4, '0')
     if en.save
       redirect_to print_money_path(en,en.id.to_s + en.phone)
     else
@@ -53,7 +54,7 @@ class PagesController < ApplicationController
   end
 
   def entry_update
-    en = Entry.new(from: entry_params[:from], to: entry_params[:to], price: entry_params[:price],s_type: entry_params[:s_type],id_number: entry_params[:id_number], phone: entry_params[:phone], paid: entry_params[:paid], name: entry_params[:name] )
+    en = Entry.new(from: entry_params[:from], to: entry_params[:to], price: entry_params[:price],s_type: entry_params[:s_type],id_number: entry_params[:id_number], phone: entry_params[:phone], paid: entry_params[:paid], name: entry_params[:name], bill_no: (Entry.all.count() + 1).to_s.rjust(4, '0') )
     if entry_params[:date]
       en.date = DateTime.parse(entry_params[:date]) - 5.hours - 30.minutes
     end
@@ -94,7 +95,29 @@ class PagesController < ApplicationController
   def reprint_other
     @entry = Entry.where(s_type: nil).all
   end
+  def education
+    @edu = Education.new
+  end
 
+  def print_edu
+    @edu = Education.where(id: params[:id]).first
+    @format = params[:format]
+    # raise @format.inspect
+  end
+
+  def reprint_edu
+    @edus = Education.all
+  end
+  def edu_update
+    en = Education.new(edu_params)
+    en.bill_no = (Education.all.count() + 1).to_s.rjust(4, '0');
+    # raise en.id.to_s.inspect
+    if en.save
+      redirect_to print_edu_path(en,en.id.to_s + en.contact_number.to_s)
+    else
+      redirect_to :back
+    end
+  end
   private
 
     def entry_params
@@ -102,5 +125,9 @@ class PagesController < ApplicationController
     end
     def money_params
       params.require(:money).permit(:from,:country,:phone,:name,:acc_no,:ifsc,:company,:aadhar_no,:pan_no,:amount,:address,:id_no,:phone)
+    end
+
+    def edu_params
+      params.require(:education).permit(:name,:father_name,:address,:contact_number,:course,:college_name,:location,:payment)
     end
 end
