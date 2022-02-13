@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   get 'services', to: 'sites#services', as: 'sites_services'
   get 'news', to: 'sites#news', as: 'sites_news'
   get 'staff_login', to: 'sites#staff_login', as: 'sites_staff_login'
-  mount RailsAdmin::Engine => '/admin', as: 'rails_admin'
+  mount RailsAdmin::Engine => '/jafar', as: 'rails_admin'
   get '/index',to: 'pages#index', as: 'index'
   get 'pages/details'
   get '/print/:id/:format', to: 'pages#print', as: 'print'
