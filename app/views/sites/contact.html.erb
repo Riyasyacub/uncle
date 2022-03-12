@@ -298,12 +298,13 @@
   </div>
   <!-- #page -->
   <!--  -->
+  
   <script type="text/javascript">
     $(".btn[data-bs-target='#exampleModal']").on("click",function(){
       $(".modal.fade").addClass("show");
       $(".modal.fade").css("display","block");
       Swal.fire({
-        imageUrl: '<%= image_path("alnafisupi.jpeg") %>',
+        imageUrl: '<%= image_path('alnafisupi.jpg') %>',
         imageHeight: 500,
         imageAlt: 'Alnafis UPI',
         showConfirmButton: false
