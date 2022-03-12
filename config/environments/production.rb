@@ -118,24 +118,7 @@ Rails.application.configure do
   # config.active_record.database_selector = { delay: 2.seconds }
   # config.active_record.database_resolver = ActiveRecord::Middleware::DatabaseSelector::Resolver
   # config.active_record.database_resolver_context = ActiveRecord::Middleware::DatabaseSelector::Resolver::Session
-  require 'mail'
 
-Mail.defaults do
-  delivery_method :smtp, {
-    :port      => 587,
-    :address   => "smtp.mailgun.org",
-    :user_name => "postmaster@sandbox4a1f74dcd1ec4daba1fe771713e902e1.mailgun.org",
-    :password  => "30f0f304f58864a44b23fb42fa2b61f6-2ac825a1-f4697ece",
-  }
-end
 
-mail = Mail.deliver do
-  to      'riyasyacub@gmail.com'
-  from    'Admin@sandbox4a1f74dcd1ec4daba1fe771713e902e1.mailgun.org'
-  subject 'Hello'
 
-  text_part do
-    body 'Testing some Mailgun awesomness'
-  end
-end
 end
