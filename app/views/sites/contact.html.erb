@@ -192,7 +192,7 @@
             <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="<%= sites_staff_login_path %>">Staff Login</a></li>
           </ul>
         </div>
-	</nav><!-- #site-navigation -->
+      </nav><!-- #site-navigation -->
       <nav class="social-navigation" role="navigation" aria-label="Social Links Menu">
         <div class="menu-social-container">
           <ul id="menu-social" class="social-links-menu">
@@ -201,7 +201,7 @@
             <li id="menu-item-37" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-37"><a href="http://instagram.com/alnafistours_travels"><span class="screen-reader-text">Instagram</span><svg class="svg-icon" width="26" height="26" aria-hidden="true" role="img" focusable="false" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M12,4.622c2.403,0,2.688,0.009,3.637,0.052c0.877,0.04,1.354,0.187,1.671,0.31c0.42,0.163,0.72,0.358,1.035,0.673 c0.315,0.315,0.51,0.615,0.673,1.035c0.123,0.317,0.27,0.794,0.31,1.671c0.043,0.949,0.052,1.234,0.052,3.637 s-0.009,2.688-0.052,3.637c-0.04,0.877-0.187,1.354-0.31,1.671c-0.163,0.42-0.358,0.72-0.673,1.035 c-0.315,0.315-0.615,0.51-1.035,0.673c-0.317,0.123-0.794,0.27-1.671,0.31c-0.949,0.043-1.233,0.052-3.637,0.052 s-2.688-0.009-3.637-0.052c-0.877-0.04-1.354-0.187-1.671-0.31c-0.42-0.163-0.72-0.358-1.035-0.673 c-0.315-0.315-0.51-0.615-0.673-1.035c-0.123-0.317-0.27-0.794-0.31-1.671C4.631,14.688,4.622,14.403,4.622,12 s0.009-2.688,0.052-3.637c0.04-0.877,0.187-1.354,0.31-1.671c0.163-0.42,0.358-0.72,0.673-1.035 c0.315-0.315,0.615-0.51,1.035-0.673c0.317-0.123,0.794-0.27,1.671-0.31C9.312,4.631,9.597,4.622,12,4.622 M12,3 C9.556,3,9.249,3.01,8.289,3.054C7.331,3.098,6.677,3.25,6.105,3.472C5.513,3.702,5.011,4.01,4.511,4.511 c-0.5,0.5-0.808,1.002-1.038,1.594C3.25,6.677,3.098,7.331,3.054,8.289C3.01,9.249,3,9.556,3,12c0,2.444,0.01,2.751,0.054,3.711 c0.044,0.958,0.196,1.612,0.418,2.185c0.23,0.592,0.538,1.094,1.038,1.594c0.5,0.5,1.002,0.808,1.594,1.038 c0.572,0.222,1.227,0.375,2.185,0.418C9.249,20.99,9.556,21,12,21s2.751-0.01,3.711-0.054c0.958-0.044,1.612-0.196,2.185-0.418 c0.592-0.23,1.094-0.538,1.594-1.038c0.5-0.5,0.808-1.002,1.038-1.594c0.222-0.572,0.375-1.227,0.418-2.185 C20.99,14.751,21,14.444,21,12s-0.01-2.751-0.054-3.711c-0.044-0.958-0.196-1.612-0.418-2.185c-0.23-0.592-0.538-1.094-1.038-1.594 c-0.5-0.5-1.002-0.808-1.594-1.038c-0.572-0.222-1.227-0.375-2.185-0.418C14.751,3.01,14.444,3,12,3L12,3z M12,7.378 c-2.552,0-4.622,2.069-4.622,4.622S9.448,16.622,12,16.622s4.622-2.069,4.622-4.622S14.552,7.378,12,7.378z M12,15 c-1.657,0-3-1.343-3-3s1.343-3,3-3s3,1.343,3,3S13.657,15,12,15z M16.804,6.116c-0.596,0-1.08,0.484-1.08,1.08 s0.484,1.08,1.08,1.08c0.596,0,1.08-0.484,1.08-1.08S17.401,6.116,16.804,6.116z"></path></svg></a></li>
           </ul>
         </div>
-	</nav><!-- .social-navigation -->
+      </nav><!-- .social-navigation -->
     </header>
     <!-- #masthead -->
     <div id="content" class="site-content">
@@ -227,7 +227,14 @@
                         </div>
                         <div class="wp-block-jetpack-email"><a itemprop="email" href="mailto:alnafistravels@gmail.com">alnafistravels@gmail.com</a></div>
                         <div class="wp-block-jetpack-phone"><span itemprop="telephone"><a href="tel:9943799766">9943799766</a><span>,</span>
-                            <a href="tel:9943733766">9943733766</a></span></div>
+                            <a href="tel:9943733766">9943733766</a></span>
+                        </div>
+                        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+                        <div class="wp-block-jetpack-payment" >
+                          <button type="button" class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            UPI Payment
+                          </button>
+                        </div>
                       </div>
                     </div>
                     <div class="wp-block-column">
@@ -255,220 +262,229 @@
                           </div>
                           <%= form.submit "Submit" , class:"pushbutton-wide" %>
                         <% end %>
-                        
+                      </div>
                     </div>
                   </div>
+                  <div style="height:68px;" aria-hidden="true" class="wp-block-spacer"></div>
                 </div>
-                <div style="height:68px;" aria-hidden="true" class="wp-block-spacer"></div>
               </div>
             </div>
-          </div>
-          <!-- .entry-content -->
-        </article>
-        <!-- #post-94 -->
-      </main><!-- #main -->
-    </section>
-    <!-- #primary -->
-  </div>
-  <!-- #content -->
-  <footer id="colophon" class="site-footer responsive-max-width">
-    <nav class="footer-navigation" aria-label="Footer Menu">
-      <div class="menu-main-container">
-        <ul id="menu-main-2" class="footer-menu">
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-32"><a href="<%= sites_home_path %>">Home</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="<%= sites_services_path %>">Services</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a href="<%= sites_news_path %>">News</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-94 current_page_item menu-item-103"><a href="<%= sites_contact_path %>" aria-current="page">Contact</a></li>
-          <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="<%= sites_staff_login_path %>">Staff Login</a></li>
-        </ul>
-      </div>
-	</nav><!-- .footer-navigation -->
-    <div class="site-info">
-      <a class="site-name" href="<%= sites_home_path %>" rel="home">Alnafis Tours and Travels</a>
+            <!-- .entry-content -->
+          </article>
+          <!-- #post-94 -->
+        </main><!-- #main -->
+      </section>
+      <!-- #primary -->
     </div>
-    <!-- .site-info -->
-  </footer>
-  <!-- #colophon -->
-</div>
-<!-- #page -->
-<!--  -->
-<script type="text/javascript">
-  /* <![CDATA[ */
-  	jQuery(document).ready( function($) {
-  		function doFollowingHover() {
-  			$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
-
-  			$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
-
-  				$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
-  			});
-  			$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
-  				$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
-  			});
-  		}
-
-  		$('#wp-admin-bar-follow > a').click( function( e ) {
-  			$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
-
-  			e.preventDefault();
-
-  			var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
-
-  			if ( li.hasClass( 'subscribed' ) ) {
-  				li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
-  				link.html( "Follow" );
-
-  				$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
-
-  				var action = 'ab_unsubscribe_from_blog';
-  			} else {
-  				li.addClass( 'subscribed' ).removeClass( 'unfollow' );
-  				link.html( "Following" );
-
-  					var left = 131 - link.width();
-  					li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
-  					$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/\u0022\u003Eyour reader\u003C\/a\u003E. You can manage email alerts from your \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/following\/edit\/\u0022\u003Esubscriptions page\u003C\/a\u003E." );
-
-  					$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
-
-  					setTimeout( function() {
-  						$('body').on( 'click.bubble touchstart.bubble', function(e) {
-  							if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
-  								hideBubble();
-  						});
-  						setTimeout( hideBubble, 15000 );
-  					}, 500 );
-
-  				var action = 'ab_subscribe_to_blog';
-  				$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
-  					doFollowingHover();
-  					$(this).unbind( '.shift' );
-  				});
-  			}
-
-  			var nonce = link.attr( 'href' ).split( '_wpnonce=' );
-  			nonce = nonce[1];
-
-  			$.post( "https:\/\/exforddemo.wordpress.com\/wp-admin\/admin-ajax.php", {
-  				'action': action,
-  				'_wpnonce': nonce,
-  				'source': 'admin_bar',
-  				'blog_id': 165789176				});
-  		});
-  	});
-  /* ]]> */
-</script>
-<script src="//0.gravatar.com/js/gprofiles.js?ver=202140y" id="grofiles-cards-js"></script>
-<script id="wpgroho-js-extra">
-  var WPGroHo = {"my_hash":"399af2baf3bdf3ab12379e802db05041"};
-</script>
-<script crossorigin="anonymous" type="text/javascript" src="https://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240h"></script>
-<script>
-  // Initialize and attach hovercards to all gravatars
-  ( function() {
-  	function init() {
-  		if ( typeof Gravatar === 'undefined' ) {
-  			return;
-  		}
-
-  		if ( typeof Gravatar.init !== 'function' ) {
-  			return;
-  		}
-
-  		Gravatar.profile_cb = function ( hash, id ) {
-  			WPGroHo.syncProfileData( hash, id );
-  		};
-
-  		Gravatar.my_hash = WPGroHo.my_hash;
-  		Gravatar.init( 'body', '#wp-admin-bar-my-account' );
-  	}
-
-  	if ( document.readyState !== 'loading' ) {
-  		init();
-  	} else {
-  		document.addEventListener( 'DOMContentLoaded', init );
-  	}
-  } )();
-</script>
-<div style="display:none">
-  <div class="grofile-hash-map-399af2baf3bdf3ab12379e802db05041">
+    <!-- #content -->
+    <footer id="colophon" class="site-footer responsive-max-width">
+      <nav class="footer-navigation" aria-label="Footer Menu">
+        <div class="menu-main-container">
+          <ul id="menu-main-2" class="footer-menu">
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home menu-item-32"><a href="<%= sites_home_path %>">Home</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-83"><a href="<%= sites_services_path %>">Services</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-134"><a href="<%= sites_news_path %>">News</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page current-menu-item page_item page-item-94 current_page_item menu-item-103"><a href="<%= sites_contact_path %>" aria-current="page">Contact</a></li>
+            <li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-103"><a href="<%= sites_staff_login_path %>">Staff Login</a></li>
+          </ul>
+        </div>
+      </nav><!-- .footer-navigation -->
+      <div class="site-info">
+        <a class="site-name" href="<%= sites_home_path %>" rel="home">Alnafis Tours and Travels</a>
+      </div>
+      <!-- .site-info -->
+    </footer>
+    <!-- #colophon -->
   </div>
-</div>
-<div id="report-form-window" style="display:none;"></div>
-<!-- #demosite-activate-wrap -->
-<style>
-  .wp-container-61615f57434e8 .alignleft { float: left; margin-right: 2em; }.wp-container-61615f57434e8 .alignright { float: right; margin-left: 2em; }
-</style><link rel="stylesheet" id="all-css-0-2" href="https://s0.wp.com/_static/??-eJxtjE0OQDAQRi+kvpREbMRRhEnJoDONtlwfCzvr94MrGFJJThJ8NmHPC0vE6lIYacPAQph2pS3i1UZKhmVWnOyu0rOUFGOB/8lyZGEV84WzHh6P/4G37X1nm9pWbWPbar0B+bE0Gg==?cssminify=yes" type="text/css" media="all">
-<script id="thickbox-js-extra">
-  var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/s0.wp.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
-</script>
-<script id="notes-rest-common-js-extra">
-  var wpNotesArgs = {"cacheBuster":"calypso-4917-2127-g8dffda7941v2","iframeUrl":"https:\/\/widgets.wp.com\/notifications\/","iframeAppend":"2","iframeScroll":"no","wide":"1"};
-</script>
-<script id="tos-report-form-js-extra">
-  var wpcom_tos_report_form = {"ajaxurl":"\/wp-admin\/admin-ajax.php","isLoggedoutUser":"","post_ID":"94","current_url":"https:\/\/exforddemo.wordpress.com\/contact","report_this_content":"Report this content"};
-</script>
-<script crossorigin="anonymous" type="text/javascript" src="https://s0.wp.com/_static/??-eJyNkN1uwyAMhV9oFHVZezftWQh4DWmMkW2SPv5Itf6oot1uEOY7NufYLtl4SgpJ7Sg2wBw95NNmlDdbUUx+KgFkZTpEf+zpdL20RAPNwPE8z4yywZhaKhcqML3je8HFBhaTp3KI6U5XuSc0t77nPUsMB1CxUCqlYwQzucUqYJ6cwsN7y1xJAVg8MTyz37s1f4KW+4qxiDo/wAuTiVYr57NiREpmfv9Tf43/WqwkhiETq/kmxsf6X/tGJwq8fqVc00prDbUE7CH8ruELP7f7rut2H7vtfvwBSvHeHQ=="></script>
-<script>
-  /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
-</script>
-<script type="text/javascript">
-  // <![CDATA[
-  (function() {
-  try{
-    if ( window.external &&'msIsSiteMode' in window.external) {
-      if (window.external.msIsSiteMode()) {
-        var jl = document.createElement('script');
-        jl.type='text/javascript';
-        jl.async=true;
-        jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
-        var s = document.getElementsByTagName('script')[0];
-        s.parentNode.insertBefore(jl, s);
+  <!-- #page -->
+  <!--  -->
+  <script type="text/javascript">
+    $(".btn[data-bs-target='#exampleModal']").on("click",function(){
+      $(".modal.fade").addClass("show");
+      $(".modal.fade").css("display","block");
+      Swal.fire({
+        imageUrl: '<%= image_path("alnafisupi.jpeg") %>',
+        imageHeight: 500,
+        imageAlt: 'Alnafis UPI',
+        showConfirmButton: false
+      })
+    })
+    /* <![CDATA[ */
+    	jQuery(document).ready( function($) {
+    		function doFollowingHover() {
+    			$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+    			$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
+
+    				$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
+    			});
+    			$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
+    				$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
+    			});
+    		}
+
+    		$('#wp-admin-bar-follow > a').click( function( e ) {
+    			$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
+
+    			e.preventDefault();
+
+    			var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
+
+    			if ( li.hasClass( 'subscribed' ) ) {
+    				li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
+    				link.html( "Follow" );
+
+    				$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
+
+    				var action = 'ab_unsubscribe_from_blog';
+    			} else {
+    				li.addClass( 'subscribed' ).removeClass( 'unfollow' );
+    				link.html( "Following" );
+
+    					var left = 131 - link.width();
+    					li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
+    					$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/\u0022\u003Eyour reader\u003C\/a\u003E. You can manage email alerts from your \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/following\/edit\/\u0022\u003Esubscriptions page\u003C\/a\u003E." );
+
+    					$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
+
+    					setTimeout( function() {
+    						$('body').on( 'click.bubble touchstart.bubble', function(e) {
+    							if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
+    								hideBubble();
+    						});
+    						setTimeout( hideBubble, 15000 );
+    					}, 500 );
+
+    				var action = 'ab_subscribe_to_blog';
+    				$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
+    					doFollowingHover();
+    					$(this).unbind( '.shift' );
+    				});
+    			}
+
+    			var nonce = link.attr( 'href' ).split( '_wpnonce=' );
+    			nonce = nonce[1];
+
+    			$.post( "https:\/\/exforddemo.wordpress.com\/wp-admin\/admin-ajax.php", {
+    				'action': action,
+    				'_wpnonce': nonce,
+    				'source': 'admin_bar',
+    				'blog_id': 165789176				});
+    		});
+    	});
+    /* ]]> */
+  </script>
+  <script src="//0.gravatar.com/js/gprofiles.js?ver=202140y" id="grofiles-cards-js"></script>
+  <script id="wpgroho-js-extra">
+    var WPGroHo = {"my_hash":"399af2baf3bdf3ab12379e802db05041"};
+  </script>
+  <script crossorigin="anonymous" type="text/javascript" src="https://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240h"></script>
+  <script>
+    // Initialize and attach hovercards to all gravatars
+    ( function() {
+    	function init() {
+    		if ( typeof Gravatar === 'undefined' ) {
+    			return;
+    		}
+
+    		if ( typeof Gravatar.init !== 'function' ) {
+    			return;
+    		}
+
+    		Gravatar.profile_cb = function ( hash, id ) {
+    			WPGroHo.syncProfileData( hash, id );
+    		};
+
+    		Gravatar.my_hash = WPGroHo.my_hash;
+    		Gravatar.init( 'body', '#wp-admin-bar-my-account' );
+    	}
+
+    	if ( document.readyState !== 'loading' ) {
+    		init();
+    	} else {
+    		document.addEventListener( 'DOMContentLoaded', init );
+    	}
+    } )();
+  </script>
+  <div style="display:none">
+    <div class="grofile-hash-map-399af2baf3bdf3ab12379e802db05041">
+    </div>
+  </div>
+  <div id="report-form-window" style="display:none;"></div>
+  <!-- #demosite-activate-wrap -->
+  <style>
+    .wp-container-61615f57434e8 .alignleft { float: left; margin-right: 2em; }.wp-container-61615f57434e8 .alignright { float: right; margin-left: 2em; }
+  </style><link rel="stylesheet" id="all-css-0-2" href="https://s0.wp.com/_static/??-eJxtjE0OQDAQRi+kvpREbMRRhEnJoDONtlwfCzvr94MrGFJJThJ8NmHPC0vE6lIYacPAQph2pS3i1UZKhmVWnOyu0rOUFGOB/8lyZGEV84WzHh6P/4G37X1nm9pWbWPbar0B+bE0Gg==?cssminify=yes" type="text/css" media="all">
+  <script id="thickbox-js-extra">
+    var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/s0.wp.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
+  </script>
+  <script id="notes-rest-common-js-extra">
+    var wpNotesArgs = {"cacheBuster":"calypso-4917-2127-g8dffda7941v2","iframeUrl":"https:\/\/widgets.wp.com\/notifications\/","iframeAppend":"2","iframeScroll":"no","wide":"1"};
+  </script>
+  <script id="tos-report-form-js-extra">
+    var wpcom_tos_report_form = {"ajaxurl":"\/wp-admin\/admin-ajax.php","isLoggedoutUser":"","post_ID":"94","current_url":"https:\/\/exforddemo.wordpress.com\/contact","report_this_content":"Report this content"};
+  </script>
+  <script crossorigin="anonymous" type="text/javascript" src="https://s0.wp.com/_static/??-eJyNkN1uwyAMhV9oFHVZezftWQh4DWmMkW2SPv5Itf6oot1uEOY7NufYLtl4SgpJ7Sg2wBw95NNmlDdbUUx+KgFkZTpEf+zpdL20RAPNwPE8z4yywZhaKhcqML3je8HFBhaTp3KI6U5XuSc0t77nPUsMB1CxUCqlYwQzucUqYJ6cwsN7y1xJAVg8MTyz37s1f4KW+4qxiDo/wAuTiVYr57NiREpmfv9Tf43/WqwkhiETq/kmxsf6X/tGJwq8fqVc00prDbUE7CH8ruELP7f7rut2H7vtfvwBSvHeHQ=="></script>
+  <script>
+    /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+  </script>
+  <script type="text/javascript">
+    // <![CDATA[
+    (function() {
+    try{
+      if ( window.external &&'msIsSiteMode' in window.external) {
+        if (window.external.msIsSiteMode()) {
+          var jl = document.createElement('script');
+          jl.type='text/javascript';
+          jl.async=true;
+          jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
+          var s = document.getElementsByTagName('script')[0];
+          s.parentNode.insertBefore(jl, s);
+        }
       }
+    }catch(e){}
+    })();
+    // ]]>
+  </script><script src="//stats.wp.com/w.js?62" defer=""></script> <script type="text/javascript">
+    _tkq = window._tkq || [];
+    _stq = window._stq || [];
+    _tkq.push(['identifyUser', 212441394, 'riyasyacub']);
+    _tkq.push(['storeContext', {'blog_id':'165789176','blog_tz':'0','user_lang':'en','blog_lang':'en'}]);
+    _stq.push(['view', {'blog':'165789176','v':'wpcom','tz':'0','user_id':'212441394','post':'94','subd':'exforddemo'}]);
+    _stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1zNDZ8S252Wis9XUQyb3YrcUVIU2R0VH5TdXRHbnMzVXFNbGwzP1NCZE1FRnJLSSwxRGRzeF1tR0dxLTZxMXNReHZ6SExkMUZEdHZOeDVBfE1nenlpMXpKZDJtVzNILE5dbTEwdTJqblQ1dUJxZ1hMTGowRkJhc1ozLlZzP1JSej9Qa3YvVGJNJVJwTnVPOTg0STFjRUpyVkt+RnM/JnR+QWEtYSxofj1FR2ZaLWYyVUxDeHkzL3drNl1fdUpaLzRONEFwd11JPURqUGN4UExGSkxwY2dHMFg0RFN2XX5UQXFOVHpPSVtySDVya04rUUhIVjRY'}]);
+    _stq.push([ 'clickTrackerInit', '165789176', '94' ]);
+  </script>
+  <noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
+  <script>
+    if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
+
+    	wpcom_mobile_user_agent_info.init();
+    	var mobileStatsQueryString = "";
+
+    	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
+    		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
+
+    	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
+    		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
+
+    	if( wpcom_mobile_user_agent_info.isIPad() )
+    		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
+
+    	if( "" != mobileStatsQueryString ) {
+    		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
+    	}
+
     }
-  }catch(e){}
-  })();
-  // ]]>
-</script><script src="//stats.wp.com/w.js?62" defer=""></script> <script type="text/javascript">
-  _tkq = window._tkq || [];
-  _stq = window._stq || [];
-  _tkq.push(['identifyUser', 212441394, 'riyasyacub']);
-  _tkq.push(['storeContext', {'blog_id':'165789176','blog_tz':'0','user_lang':'en','blog_lang':'en'}]);
-  _stq.push(['view', {'blog':'165789176','v':'wpcom','tz':'0','user_id':'212441394','post':'94','subd':'exforddemo'}]);
-  _stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1zNDZ8S252Wis9XUQyb3YrcUVIU2R0VH5TdXRHbnMzVXFNbGwzP1NCZE1FRnJLSSwxRGRzeF1tR0dxLTZxMXNReHZ6SExkMUZEdHZOeDVBfE1nenlpMXpKZDJtVzNILE5dbTEwdTJqblQ1dUJxZ1hMTGowRkJhc1ozLlZzP1JSej9Qa3YvVGJNJVJwTnVPOTg0STFjRUpyVkt+RnM/JnR+QWEtYSxofj1FR2ZaLWYyVUxDeHkzL3drNl1fdUpaLzRONEFwd11JPURqUGN4UExGSkxwY2dHMFg0RFN2XX5UQXFOVHpPSVtySDVya04rUUhIVjRY'}]);
-  _stq.push([ 'clickTrackerInit', '165789176', '94' ]);
-</script>
-<noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
-<script>
-  if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
-
-  	wpcom_mobile_user_agent_info.init();
-  	var mobileStatsQueryString = "";
-
-  	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
-  		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
-
-  	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
-  		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
-
-  	if( wpcom_mobile_user_agent_info.isIPad() )
-  		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
-
-  	if( "" != mobileStatsQueryString ) {
-  		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
-  	}
-
-  }
-</script>
-<style>
-  img#wpstats {
-  			position: absolute !important;
-  			clip: rect(0, 0, 0, 0);
-  			padding: 0 !important;
-  			border: 0 !important;
-  			height: 0 !important;
-  			width: 0 !important;
-  			overflow: hidden;
-  		}
-</style><img src="https://pixel.wp.com/g.gif?blog=165789176&amp;v=wpcom&amp;tz=0&amp;user_id=212441394&amp;post=94&amp;subd=exforddemo&amp;host=exforddemo.wordpress.com&amp;ref=https%3A%2F%2Fexforddemo.wordpress.com%2Fnews%2F&amp;rand=0.9689245459097704" alt=":)" id="wpstats"><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+  </script>
+  <style>
+    img#wpstats {
+    			position: absolute !important;
+    			clip: rect(0, 0, 0, 0);
+    			padding: 0 !important;
+    			border: 0 !important;
+    			height: 0 !important;
+    			width: 0 !important;
+    			overflow: hidden;
+    		}
+  </style><img src="https://pixel.wp.com/g.gif?blog=165789176&amp;v=wpcom&amp;tz=0&amp;user_id=212441394&amp;post=94&amp;subd=exforddemo&amp;host=exforddemo.wordpress.com&amp;ref=https%3A%2F%2Fexforddemo.wordpress.com%2Fnews%2F&amp;rand=0.9689245459097704" alt=":)" id="wpstats"><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
 </body>
