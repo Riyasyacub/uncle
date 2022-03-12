@@ -76,4 +76,3 @@ gem "mime-types", "~> 3.3"
 
 gem "rest-client", "~> 2.1"
 
-gem 'mail'

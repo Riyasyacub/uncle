@@ -296,7 +296,6 @@ DEPENDENCIES
   jbuilder (~> 2.7)
   kaminari-mongoid (~> 1.0)
   listen (~> 3.3)
-  mail
   mime-types (~> 3.3)
   mongoid (~> 7.3)
   popper_js (~> 2.9)
