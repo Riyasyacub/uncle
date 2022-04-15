@@ -53,3 +53,9 @@ $(document).on('click',".submit",function(){
     $(".after-login").show();
   }
 })
+
+$(document).on("click",".details-btn",function(){
+  let id = $(this).attr("data-id");
+  $(this).toggleClass("active");
+  $("#"+id).slideToggle();
+})

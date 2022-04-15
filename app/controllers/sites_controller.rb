@@ -30,6 +30,7 @@ end
   end
 
   def news
+    @blogs = Blog.all
   end
 
   def staff_login
