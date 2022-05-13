@@ -1,6 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <% if controller.controller_name == "pages" %>
+      <meta content="IE=edge" http-equiv="X-UA-Compatible">
+      <meta content="NONE,NOARCHIVE" name="robots">
+    <% end %>
     <title>Alnafis Travels </title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
@@ -9,9 +13,6 @@
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
     <script  src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <% if controller.controller_name == "pages" %>
-      <meta content="NONE,NOARCHIVE" name="robots">
-    <% end %>
   </head>
 
   <body>

@@ -5,7 +5,7 @@ class SitesController < ApplicationController
 
   def contact
     @message = Message.new
-    
+
   end
   def message_create
     @message = Message.new(message_params)
@@ -13,7 +13,7 @@ class SitesController < ApplicationController
       # AdminMailer.new_feedback(message_params[:name],message_params[:number],message_params[:message]).deliver
       # send_simple_message
       redirect_to sites_contact_path, flash: {success: "Submitted Successfully"}
-    else 
+    else
       redirect_to sites_contact_path, flash: {danger: "All fields are required & should be a vaild one"}
     end
 
@@ -34,7 +34,7 @@ end
   end
 
   def staff_login
-    
+    @user = User.new
   end
 
   private

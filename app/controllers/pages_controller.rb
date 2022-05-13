@@ -1,6 +1,9 @@
 class PagesController < ApplicationController
+
+  before_action :require_user
+
   def index
-    
+
   end
 
   def details
@@ -130,4 +133,6 @@ class PagesController < ApplicationController
     def edu_params
       params.require(:education).permit(:name,:father_name,:address,:contact_number,:course,:college_name,:location,:payment)
     end
+
+
 end

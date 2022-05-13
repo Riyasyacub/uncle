@@ -27,5 +27,8 @@ Rails.application.routes.draw do
   get '/reprint_other', to: 'pages#reprint_other' , as: 'reprint_other'
   get '/messages', to: 'pages#messages', as: 'messages'
   post '/message', to: 'sites#message_create', as: 'message_create'
+
+  post '/login', to: 'sessions#create', as: 'login'
+  delete '/logout', to: 'sessions#destroy', as: 'logout'
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
 end

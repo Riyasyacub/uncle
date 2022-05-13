@@ -18,17 +18,17 @@ Rails.start()
 Turbolinks.start()
 
 
-$(document).ready( function(){
-  if (localStorage.getItem('login') == true){
-  // console.log($(".before-login").html())
-  $(".before-login").hide();
-  $(".after-login").show();
-}
-else {
-  $(".after-login").hide();
-  $(".before-login").show();
-}
-})
+// $(document).ready( function(){
+//   if (localStorage.getItem('login') == true){
+//   // console.log($(".before-login").html())
+//   $(".before-login").hide();
+//   $(".after-login").show();
+// }
+// else {
+//   $(".after-login").hide();
+//   $(".before-login").show();
+// }
+// })
 
 $(document).on('click',".iframe-btn",function(){
   if($(this).text() == 'Ria'){
@@ -45,14 +45,14 @@ $(document).on('click',".iframe-btn",function(){
   }
 })
 
-$(document).on('click',".submit",function(){
-  
-  if($("#userid").val() == 'admin' && $("#pass").val() == 'Nafis2014@'){
-    localStorage.setItem('login',true);
-    $(".before-login").hide();
-    $(".after-login").show();
-  }
-})
+// $(document).on('click',".submit",function(){
+//
+//   if($("#userid").val() == 'admin' && $("#pass").val() == 'Nafis2014@'){
+//     localStorage.setItem('login',true);
+//     $(".before-login").hide();
+//     $(".after-login").show();
+//   }
+// })
 
 $(document).on("click",".details-btn",function(){
   let id = $(this).attr("data-id");
