@@ -1,8 +1,10 @@
 class Entry
   include Mongoid::Document
-  include Mongoid::Timestamps 
-  
-  field :name, type:Array, default:[] 
+  include Mongoid::Timestamps
+
+  belongs_to :user
+
+  field :name, type:Array, default:[]
   field :price, type:Integer
   field :from, type:String
   field :to, type:String

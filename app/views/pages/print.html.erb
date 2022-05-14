@@ -23,11 +23,11 @@
     <div class="d-flex justify-content-around align-items-center" >
       <h1>Alnafis Tours and Travels</h1>
     </div>
-    
-      <div class="d-flex justify-content-around " >7E, 1st Floor, Opp Canara Bank,</div>
-      <div class="d-flex justify-content-around " >  Sundara Vinayagar  Kovil Street, Kallakurichi -606202</div>
-    
-    <div class="d-flex justify-content-around " ><span><b>Contact: 9943799766, 9943733766 </b><span> </div>
+
+    <div class="d-flex justify-content-around " ><%= @current_user.address1 %></div>
+    <div class="d-flex justify-content-around " ><%= @current_user.address2 %></div>
+
+  <div class="d-flex justify-content-around " ><span><b>Contact: <%= @current_user.contact %></b><span> </div>
     <br>
     <h3 class=" d-flex justify-content-around align-items-center" >
 Invoice
@@ -54,7 +54,7 @@ Invoice
       <% else %>
       <th scope="col" >From</th>
       <% end %>
-      
+
       <% if @entry.s_type != nil %>
       <th scope="col" >To</th>
       <% else %>
@@ -72,7 +72,7 @@ Invoice
       <th scope="col" >Date </th>
       <% end %>
       <th scope="col" >Amount</th>
-      
+
     </tr>
     </thead>
     <tbody>
@@ -89,14 +89,14 @@ Invoice
       <td><%= @entry.id_number %></td>
       <% end %>
       <td>₹<%= "%.2f"%(("%.2f"%(@entry.price)).to_f/@entry.name.length) %></td>
-      
+
       </tr>
       <% end %>
       <tr class="table-success" >
       <td scope="row"  ></td>
       <td></td>
       <td></td>
-      
+
       <% if(@entry.id_number != nil ) %>
         <td></td>
       <% end %>
@@ -119,7 +119,7 @@ Invoice
       <% end %>
       <td>Paid</td>
       <td>₹<%= "%.2f"%@entry.paid %></td>
-      
+
       </tr>
       <% if(@entry.price - @entry.paid != 0) %>
       <tr class="table-success" >
@@ -138,13 +138,13 @@ Invoice
       <% end %>
       <% end %>
     </tbody>
-    
+
 </div>
 <script>
 function printDiv(divName,name) {
      var printContents = document.getElementById(divName).innerHTML;
      var originalContents = document.body.innerHTML;
-      
+
      var data = `<head><title>` + name +`</title>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      </head><body>`+printContents + `</body><style>
@@ -170,7 +170,7 @@ h1 {
 }
 
 </style>`;
-    
+
      function PopUp(data) {
     var mywindow = window.open('','');
 
@@ -179,7 +179,7 @@ h1 {
     mywindow.document.close(); // necessary for IE >= 10 and necessary before onload for chrome
 
     if (is_chrome) {
-        mywindow.onload = function() { // wait until all resources loaded 
+        mywindow.onload = function() { // wait until all resources loaded
             mywindow.focus(); // necessary for IE >= 10
             mywindow.print();
             //mywindow.close();// change window to mywindow

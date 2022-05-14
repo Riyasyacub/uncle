@@ -3,7 +3,7 @@
   .image {
     margin-left: -100px;
     }
-   
+
 .watermark {
   position: fixed;
   font-size: 80px;
@@ -27,17 +27,17 @@
     <div class="d-flex justify-content-around align-items-center" >
       <h1>Alnafis Tours and Travels</h1>
     </div>
-    
-      <div class="d-flex justify-content-around pl-3" >7E, 1st Floor, Opp Canara Bank,</div>
-      <div class="d-flex justify-content-around pl-3" >  Sundara Vinayagar  Kovil Street, Kallakurichi -606202</div>
-    
-    <div class="d-flex justify-content-around pl-3" ><span><b>Contact: 9943799766, 9943733766</b> <span> </div>
+
+    <div class="d-flex justify-content-around " ><%= @current_user.address1 %></div>
+    <div class="d-flex justify-content-around " ><%= @current_user.address2 %></div>
+
+  <div class="d-flex justify-content-around " ><span><b>Contact: <%= @current_user.contact %></b><span> </div>
     <br>
     <h3 class=" d-flex justify-content-around pl-3"><%= @money.company %></h3>
 </div>
     <div class="col-3 overlap image" ><img src="https://i.ibb.co/72c5tgh/Right-Side-copy-1.png" class="img-fluid " alt="Right-Side-copy-1" border="0"></div>
     </div>
-    
+
     <div class="row" >
 <span class="col-1 col-sm-1 col-md-1 col-xl-1" ></span>
           <span class="col-3 col-sm-3 col-md-3 col-xl-3" ><b>Bill No : </b><%= @money.bill_no %></span>
@@ -46,7 +46,7 @@
 </div>
 
 
-    
+
 
   </div>
   <div>
@@ -74,7 +74,7 @@
       <td>₹<%= "%.2f"%@money.amount %></td>
       </tr>
     </tbody>
-    
+
 </div>
 </div>
 
@@ -86,7 +86,7 @@
 function printDiv(divName,name) {
      var printContents = document.getElementById(divName).innerHTML;
      var originalContents = document.body.innerHTML;
-      
+
      var data = `<head><title>` + name +`</title>
      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
      </head><body>`+printContents + `</body><style>
@@ -112,7 +112,7 @@ h1 {
 }
 
 </style>`;
-    
+
      function PopUp(data) {
     var mywindow = window.open('','');
 
@@ -121,7 +121,7 @@ h1 {
     mywindow.document.close(); // necessary for IE >= 10 and necessary before onload for chrome
 
     if (is_chrome) {
-        mywindow.onload = function() { // wait until all resources loaded 
+        mywindow.onload = function() { // wait until all resources loaded
             mywindow.focus(); // necessary for IE >= 10
             mywindow.print();  // change window to mywindow
             //mywindow.close();// change window to mywindow

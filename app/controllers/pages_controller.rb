@@ -14,18 +14,18 @@ class PagesController < ApplicationController
   end
 
   def other
-    @entry = Entry.new
+    @entry = current_user.entries.new
     @s = ["Stamping","Cerificate Attestation","Stamping & Attestation","Emigration","Tour Visa","Hotel Booking","Others"]
     @places = ["Saudi","Qatar","Kuwait","Oman","Bahrain","UAE","Singapore","Malaysia","Sri Lanka",'Canada','Nepal','Maldives','Bangladesh','Armenia','China',"India"]
   end
 
   def print
     # raise params.inspect
-    @entry = Entry.where(id: params[:id]).first
+    @entry = current_user.entries.where(id: params[:id]).first
     @format = params[:format]
   end
   def print_money
-    @money = Money.where(id: params[:id]).first
+    @money = current_user.moneys.where(id: params[:id]).first
     @format = params[:format]
   end
   def flight
@@ -37,18 +37,18 @@ class PagesController < ApplicationController
 
   def train
     @places = Place.where(status: 2).all.pluck(:name)
-    @entry = Entry.new
+    @entry = current_user.entries.new
     @val = "Train Ticket"
     @s = ["IRCTC"]
   end
 
   def money
-    @money = Money.new
+    @money = current_user.moneys.new
   end
 
   def money_update
-    en = Money.new(money_params)
-    en.bill_no = (Money.all.count() + 1).to_s.rjust(4, '0')
+    en = current_user.moneys.new(money_params)
+    en.bill_no = (current_user.moneys.all.count() + 1).to_s.rjust(4, '0')
     if en.save
       redirect_to print_money_path(en,en.id.to_s + en.phone)
     else
@@ -57,7 +57,7 @@ class PagesController < ApplicationController
   end
 
   def entry_update
-    en = Entry.new(from: entry_params[:from], to: entry_params[:to], price: entry_params[:price],s_type: entry_params[:s_type],id_number: entry_params[:id_number], phone: entry_params[:phone], paid: entry_params[:paid], name: entry_params[:name], bill_no: (Entry.all.count() + 1).to_s.rjust(4, '0') )
+    en = current_user.entries.new(from: entry_params[:from], to: entry_params[:to], price: entry_params[:price],s_type: entry_params[:s_type],id_number: entry_params[:id_number], phone: entry_params[:phone], paid: entry_params[:paid], name: entry_params[:name], bill_no: (current_user.entries.all.count() + 1).to_s.rjust(4, '0') )
     if entry_params[:date]
       en.date = DateTime.parse(entry_params[:date]) - 5.hours - 30.minutes
     end
@@ -82,7 +82,7 @@ class PagesController < ApplicationController
   end
 
   def search_money
-    @money = Money.where(phone: params[:phone]).last
+    @money = current_user.moneys.where(phone: params[:phone]).last
 
     respond_to do |format|
       format.json {render json: @money}
@@ -90,30 +90,30 @@ class PagesController < ApplicationController
 
   end
   def reprint_ticket
-    @entry = Entry.where.not(s_type: nil).all
+    @entry = current_user.entries.where.not(s_type: nil).all
   end
   def reprint_money
-    @money = Money.all
+    @money = current_user.moneys.all
   end
   def reprint_other
-    @entry = Entry.where(s_type: nil).all
+    @entry = current_user.entries.where(s_type: nil).all
   end
   def education
-    @edu = Education.new
+    @edu = current_user.educations.new
   end
 
   def print_edu
-    @edu = Education.where(id: params[:id]).first
+    @edu = current_user.educations.where(id: params[:id]).first
     @format = params[:format]
     # raise @format.inspect
   end
 
   def reprint_edu
-    @edus = Education.all
+    @edus = current_user.educations.all
   end
   def edu_update
-    en = Education.new(edu_params)
-    en.bill_no = (Education.all.count() + 1).to_s.rjust(4, '0');
+    en = current_user.educations.new(edu_params)
+    en.bill_no = (current_user.educations.all.count() + 1).to_s.rjust(4, '0');
     # raise en.id.to_s.inspect
     if en.save
       redirect_to print_edu_path(en,en.id.to_s + en.contact_number.to_s)

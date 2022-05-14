@@ -2,6 +2,8 @@ class Education
   include Mongoid::Document
   include Mongoid::Timestamps
 
+  belongs_to :user
+  
   field :name, type:String
   field :father_name, type:String
   field :address, type:String

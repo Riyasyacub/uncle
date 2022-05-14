@@ -1,7 +1,9 @@
-class Money 
+class Money
   include Mongoid::Document
-  include Mongoid::Timestamps 
-  
+  include Mongoid::Timestamps
+
+  belongs_to :user
+
   field :name, type:String
   field :company, type:String
   field :from, type:String
