@@ -219,15 +219,36 @@
                   <div class="wp-block-columns alignwide has-2-columns">
                     <div class="wp-block-column">
                       <h2 class="has-text-align-left">Get in Touch</h2>
-                      <div itemprop="location" itemscope="" itemtype="http://schema.org/Organization" class="wp-block-jetpack-contact-info">
+                      <h3 class="has-text-align-left" style="margin: 0 auto 10px auto;">Main Office: </h3>
+                      <div itemprop="location" itemscope="" itemtype="http://schema.org/Organization" class="wp-block-jetpack-contact-info" style="margin:0 auto 10px auto;">
                         <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="wp-block-jetpack-address">
                           <div itemprop="streetAddress" class="jetpack-address__address jetpack-address__address1">7E, First Floor</div>
-                          <div><span itemprop="addressLocality" class="jetpack-address__city">Opp to Canara Bank</span>, <span itemprop="addressRegion" class="jetpack-address__region"></span> <span itemprop="postalCode" class="jetpack-address__postal">Sundara Vinayagar Koil Street</span></div>
+                          <div><span itemprop="addressLocality" class="jetpack-address__city">Opp to Canara Bank</span>,<br> <span itemprop="addressRegion" class="jetpack-address__region"></span> <span itemprop="postalCode" class="jetpack-address__postal">Mahalakshmi theater Road</span></div>
                           <div itemprop="addressCountry" class="jetpack-address__country">Kallakurichi - 606202</div>
                         </div>
                         <div class="wp-block-jetpack-email"><a itemprop="email" href="mailto:alnafistravels@gmail.com">alnafistravels@gmail.com</a></div>
                         <div class="wp-block-jetpack-phone"><span itemprop="telephone"><a href="tel:9943799766">9943799766</a><span>,</span>
                             <a href="tel:9943733766">9943733766</a></span>
+                        </div>
+                        <!-- <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+                        <!-- <div class="wp-block-jetpack-payment" >
+                          <button type="button" class="btn btn-success my-2" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                            UPI Payment
+                          </button>
+                        </div> -->
+                      </div>
+                      <h3 class="has-text-align-left" style="margin: 0 auto 10px auto">Branch Office: </h3>
+                      <div itemprop="location" itemscope="" itemtype="http://schema.org/Organization" class="wp-block-jetpack-contact-info" style="margin:0 auto 10px auto;">
+                        <div itemprop="address" itemscope="" itemtype="http://schema.org/PostalAddress" class="wp-block-jetpack-address">
+                          <div itemprop="streetAddress" class="jetpack-address__address jetpack-address__address1">First Floor</div>
+                          <div><span itemprop="addressLocality" class="jetpack-address__city">Opp to New Bus Stand</span>,<br> <span itemprop="addressRegion" class="jetpack-address__region"></span> <span itemprop="postalCode" class="jetpack-address__postal">MKS Mayura Complex</span></div>
+                          <div itemprop="addressCountry" class="jetpack-address__country">Bhavani - 638301</div>
+                        </div>
+                        <div class="wp-block-jetpack-email"><a itemprop="email" href="mailto:alnafistrv@gmail.com">alnafistrv@gmail.com</a></div>
+                        <div class="wp-block-jetpack-phone"><span itemprop="telephone"><a href="tel:9943744766">9943744766</a>
+                          <!-- <span>
+                          ,</span>
+                            <a href="tel:9943733766">9943733766</a></span> -->
                         </div>
                         <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
                         <div class="wp-block-jetpack-payment" >
@@ -248,19 +269,18 @@
                         <%= form_for @message, url: message_create_path, html: {class: "contact-form commentsblock" } do |form| %>
                           <div class="grunion-field-wrap grunion-field-name-wrap">
                             <label for="g94-name" class="grunion-field-label name">Name</label>
-                            <%# <input type="text" name="g94-name" id="g94-name" value="" class="name" required="" aria-required="true"> #%>
+
                             <%= form.text_field :name, "aria-required":"true" %>
                           </div>
                           <div class="grunion-field-wrap grunion-field-telephone-wrap">
                             <label for="g94-phone" class="grunion-field-label telephone">Phone</label>
-                            <%# <input type="tel" name="g94-phone" id="g94-phone" value="" class="telephone"> #%>
                             <%= form.number_field :number, "aria-required":"true"  %>
                           </div>
                           <div class="grunion-field-wrap grunion-field-textarea-wrap">
                             <label for="contact-form-comment-g94-message" class="grunion-field-label textarea">Message</label>
-                            <%= form.text_area :message, rows: "20", "aria-required":"true" %>
+                            <%= form.text_area :message, rows: "10", cols: "24", "aria-required":"true" %>
                           </div>
-                          <%= form.submit "Submit" , class:"pushbutton-wide" %>
+                          <%= form.submit "Submit" , class:"pushbutton-wide right" %>
                         <% end %>
                       </div>
                     </div>
@@ -298,7 +318,7 @@
   </div>
   <!-- #page -->
   <!--  -->
-  
+
   <script type="text/javascript">
     $(".btn[data-bs-target='#exampleModal']").on("click",function(){
       $(".modal.fade").addClass("show");
@@ -310,103 +330,10 @@
         showConfirmButton: false
       })
     })
-    /* <![CDATA[ */
-    	jQuery(document).ready( function($) {
-    		function doFollowingHover() {
-    			$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
 
-    			$('#wp-admin-bar-follow > a').bind( 'mouseover.unfollow', function() {
-
-    				$(this).html( "Unfollow" ).parent( 'li' ).addClass( 'unfollow' );
-    			});
-    			$('#wp-admin-bar-follow > a').bind( 'mouseout.unfollow', function() {
-    				$(this).html( "Following" ).parent( 'li' ).removeClass( 'unfollow' );
-    			});
-    		}
-
-    		$('#wp-admin-bar-follow > a').click( function( e ) {
-    			$('#wp-admin-bar-follow > a').unbind( '.unfollow' );
-
-    			e.preventDefault();
-
-    			var link = $( this ), li = $( '#wp-admin-bar-follow' ), timeout = 0;
-
-    			if ( li.hasClass( 'subscribed' ) ) {
-    				li.removeClass( 'subscribed' ).removeClass( 'unfollow' );
-    				link.html( "Follow" );
-
-    				$('body').append( $( 'div.wpcom-bubble' ).removeClass( 'fadein' ) ).off( 'click.bubble' );
-
-    				var action = 'ab_unsubscribe_from_blog';
-    			} else {
-    				li.addClass( 'subscribed' ).removeClass( 'unfollow' );
-    				link.html( "Following" );
-
-    					var left = 131 - link.width();
-    					li.append( $( 'div.wpcom-bubble' ).css( { left: '-' + left + 'px' } ) );
-    					$( 'div.bubble-txt', 'div.wpcom-bubble' ).html( "New posts from this blog will now appear in \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/\u0022\u003Eyour reader\u003C\/a\u003E. You can manage email alerts from your \u003Ca target=\u0022_blank\u0022 href=\u0022http:\/\/wordpress.com\/following\/edit\/\u0022\u003Esubscriptions page\u003C\/a\u003E." );
-
-    					$( 'div.wpcom-bubble.action-bubble' ).addClass( 'fadein' );
-
-    					setTimeout( function() {
-    						$('body').on( 'click.bubble touchstart.bubble', function(e) {
-    							if ( !$(e.target).hasClass('wpcom-bubble') && !$(e.target).parents( 'div.wpcom-bubble' ).length )
-    								hideBubble();
-    						});
-    						setTimeout( hideBubble, 15000 );
-    					}, 500 );
-
-    				var action = 'ab_subscribe_to_blog';
-    				$('#wp-admin-bar-follow > a').bind( 'mouseout.shift', function() {
-    					doFollowingHover();
-    					$(this).unbind( '.shift' );
-    				});
-    			}
-
-    			var nonce = link.attr( 'href' ).split( '_wpnonce=' );
-    			nonce = nonce[1];
-
-    			$.post( "https:\/\/exforddemo.wordpress.com\/wp-admin\/admin-ajax.php", {
-    				'action': action,
-    				'_wpnonce': nonce,
-    				'source': 'admin_bar',
-    				'blog_id': 165789176				});
-    		});
-    	});
-    /* ]]> */
   </script>
-  <script src="//0.gravatar.com/js/gprofiles.js?ver=202140y" id="grofiles-cards-js"></script>
-  <script id="wpgroho-js-extra">
-    var WPGroHo = {"my_hash":"399af2baf3bdf3ab12379e802db05041"};
-  </script>
-  <script crossorigin="anonymous" type="text/javascript" src="https://s0.wp.com/wp-content/mu-plugins/gravatar-hovercards/wpgroho.js?m=1610363240h"></script>
-  <script>
-    // Initialize and attach hovercards to all gravatars
-    ( function() {
-    	function init() {
-    		if ( typeof Gravatar === 'undefined' ) {
-    			return;
-    		}
 
-    		if ( typeof Gravatar.init !== 'function' ) {
-    			return;
-    		}
 
-    		Gravatar.profile_cb = function ( hash, id ) {
-    			WPGroHo.syncProfileData( hash, id );
-    		};
-
-    		Gravatar.my_hash = WPGroHo.my_hash;
-    		Gravatar.init( 'body', '#wp-admin-bar-my-account' );
-    	}
-
-    	if ( document.readyState !== 'loading' ) {
-    		init();
-    	} else {
-    		document.addEventListener( 'DOMContentLoaded', init );
-    	}
-    } )();
-  </script>
   <div style="display:none">
     <div class="grofile-hash-map-399af2baf3bdf3ab12379e802db05041">
     </div>
@@ -415,68 +342,7 @@
   <!-- #demosite-activate-wrap -->
   <style>
     .wp-container-61615f57434e8 .alignleft { float: left; margin-right: 2em; }.wp-container-61615f57434e8 .alignright { float: right; margin-left: 2em; }
-  </style><link rel="stylesheet" id="all-css-0-2" href="https://s0.wp.com/_static/??-eJxtjE0OQDAQRi+kvpREbMRRhEnJoDONtlwfCzvr94MrGFJJThJ8NmHPC0vE6lIYacPAQph2pS3i1UZKhmVWnOyu0rOUFGOB/8lyZGEV84WzHh6P/4G37X1nm9pWbWPbar0B+bE0Gg==?cssminify=yes" type="text/css" media="all">
-  <script id="thickbox-js-extra">
-    var thickboxL10n = {"next":"Next >","prev":"< Prev","image":"Image","of":"of","close":"Close","noiframes":"This feature requires inline frames. You have iframes disabled or your browser does not support them.","loadingAnimation":"https:\/\/s0.wp.com\/wp-includes\/js\/thickbox\/loadingAnimation.gif"};
-  </script>
-  <script id="notes-rest-common-js-extra">
-    var wpNotesArgs = {"cacheBuster":"calypso-4917-2127-g8dffda7941v2","iframeUrl":"https:\/\/widgets.wp.com\/notifications\/","iframeAppend":"2","iframeScroll":"no","wide":"1"};
-  </script>
-  <script id="tos-report-form-js-extra">
-    var wpcom_tos_report_form = {"ajaxurl":"\/wp-admin\/admin-ajax.php","isLoggedoutUser":"","post_ID":"94","current_url":"https:\/\/exforddemo.wordpress.com\/contact","report_this_content":"Report this content"};
-  </script>
-  <script crossorigin="anonymous" type="text/javascript" src="https://s0.wp.com/_static/??-eJyNkN1uwyAMhV9oFHVZezftWQh4DWmMkW2SPv5Itf6oot1uEOY7NufYLtl4SgpJ7Sg2wBw95NNmlDdbUUx+KgFkZTpEf+zpdL20RAPNwPE8z4yywZhaKhcqML3je8HFBhaTp3KI6U5XuSc0t77nPUsMB1CxUCqlYwQzucUqYJ6cwsN7y1xJAVg8MTyz37s1f4KW+4qxiDo/wAuTiVYr57NiREpmfv9Tf43/WqwkhiETq/kmxsf6X/tGJwq8fqVc00prDbUE7CH8ruELP7f7rut2H7vtfvwBSvHeHQ=="></script>
-  <script>
-    /(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
-  </script>
-  <script type="text/javascript">
-    // <![CDATA[
-    (function() {
-    try{
-      if ( window.external &&'msIsSiteMode' in window.external) {
-        if (window.external.msIsSiteMode()) {
-          var jl = document.createElement('script');
-          jl.type='text/javascript';
-          jl.async=true;
-          jl.src='/wp-content/plugins/ie-sitemode/custom-jumplist.php';
-          var s = document.getElementsByTagName('script')[0];
-          s.parentNode.insertBefore(jl, s);
-        }
-      }
-    }catch(e){}
-    })();
-    // ]]>
-  </script><script src="//stats.wp.com/w.js?62" defer=""></script> <script type="text/javascript">
-    _tkq = window._tkq || [];
-    _stq = window._stq || [];
-    _tkq.push(['identifyUser', 212441394, 'riyasyacub']);
-    _tkq.push(['storeContext', {'blog_id':'165789176','blog_tz':'0','user_lang':'en','blog_lang':'en'}]);
-    _stq.push(['view', {'blog':'165789176','v':'wpcom','tz':'0','user_id':'212441394','post':'94','subd':'exforddemo'}]);
-    _stq.push(['extra', {'crypt':'UE40eW5QN0p8M2Y/RE1zNDZ8S252Wis9XUQyb3YrcUVIU2R0VH5TdXRHbnMzVXFNbGwzP1NCZE1FRnJLSSwxRGRzeF1tR0dxLTZxMXNReHZ6SExkMUZEdHZOeDVBfE1nenlpMXpKZDJtVzNILE5dbTEwdTJqblQ1dUJxZ1hMTGowRkJhc1ozLlZzP1JSej9Qa3YvVGJNJVJwTnVPOTg0STFjRUpyVkt+RnM/JnR+QWEtYSxofj1FR2ZaLWYyVUxDeHkzL3drNl1fdUpaLzRONEFwd11JPURqUGN4UExGSkxwY2dHMFg0RFN2XX5UQXFOVHpPSVtySDVya04rUUhIVjRY'}]);
-    _stq.push([ 'clickTrackerInit', '165789176', '94' ]);
-  </script>
-  <noscript><img src="https://pixel.wp.com/b.gif?v=noscript" style="height:1px;width:1px;overflow:hidden;position:absolute;bottom:1px;" alt="" /></noscript>
-  <script>
-    if ( 'object' === typeof wpcom_mobile_user_agent_info ) {
-
-    	wpcom_mobile_user_agent_info.init();
-    	var mobileStatsQueryString = "";
-
-    	if( false !== wpcom_mobile_user_agent_info.matchedPlatformName )
-    		mobileStatsQueryString += "&x_" + 'mobile_platforms' + '=' + wpcom_mobile_user_agent_info.matchedPlatformName;
-
-    	if( false !== wpcom_mobile_user_agent_info.matchedUserAgentName )
-    		mobileStatsQueryString += "&x_" + 'mobile_devices' + '=' + wpcom_mobile_user_agent_info.matchedUserAgentName;
-
-    	if( wpcom_mobile_user_agent_info.isIPad() )
-    		mobileStatsQueryString += "&x_" + 'ipad_views' + '=' + 'views';
-
-    	if( "" != mobileStatsQueryString ) {
-    		new Image().src = document.location.protocol + '//pixel.wp.com/g.gif?v=wpcom-no-pv' + mobileStatsQueryString + '&baba=' + Math.random();
-    	}
-
-    }
-  </script>
+  </style>
   <style>
     img#wpstats {
     			position: absolute !important;
@@ -487,5 +353,5 @@
     			width: 0 !important;
     			overflow: hidden;
     		}
-  </style><img src="https://pixel.wp.com/g.gif?blog=165789176&amp;v=wpcom&amp;tz=0&amp;user_id=212441394&amp;post=94&amp;subd=exforddemo&amp;host=exforddemo.wordpress.com&amp;ref=https%3A%2F%2Fexforddemo.wordpress.com%2Fnews%2F&amp;rand=0.9689245459097704" alt=":)" id="wpstats"><grammarly-desktop-integration data-grammarly-shadow-root="true"></grammarly-desktop-integration>
+  </style><img src="https://pixel.wp.com/g.gif?blog=165789176&amp;v=wpcom&amp;tz=0&amp;user_id=212441394&amp;post=94&amp;subd=exforddemo&amp;host=exforddemo.wordpress.com&amp;ref=https%3A%2F%2Fexforddemo.wordpress.com%2Fnews%2F&amp;rand=0.9689245459097704" alt=":)" id="wpstats">
 </body>
